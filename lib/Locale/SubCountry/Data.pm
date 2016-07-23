@@ -36,7 +36,7 @@ use warnings;
 use utf8;
 package Locale::SubCountry::Data;
 
-our $VERSION = '1.65';
+our $VERSION = '1.66';
 
 $Locale::SubCountry::Data::xml_data =
 q{
@@ -2371,749 +2371,92 @@ q{
   </subcountry>
 </country>
 
+
 <country>
   <name>Italy</name>
   <code>IT</code>
   <subcountry>
-    <name>Agrigento</name>
-    <code>AG</code>
-    <category>province</category>
-    <regional_division>82</regional_division>
-  </subcountry>
-  <subcountry>
-    <name>Alessandria</name>
-    <code>AL</code>
-    <category>province</category>
-    <regional_division>21</regional_division>
-  </subcountry>
-  <subcountry>
-    <name>Ancona</name>
-    <code>AN</code>
-    <category>province</category>
-    <regional_division>57</regional_division>
-  </subcountry>
-  <subcountry>
-    <name>Aosta</name>
-    <code>AO</code>
-    <category>province</category>
-    <regional_division>23</regional_division>
-  </subcountry>
-  <subcountry>
-    <name>Arezzo</name>
-    <code>AR</code>
-    <category>province</category>
-    <regional_division>52</regional_division>
-  </subcountry>
-  <subcountry>
-    <name>Ascoli Piceno</name>
-    <code>AP</code>
-    <category>province</category>
-    <regional_division>57</regional_division>
-  </subcountry>
-  <subcountry>
-    <name>Asti</name>
-    <code>AT</code>
-    <category>province</category>
-    <regional_division>21</regional_division>
-  </subcountry>
-  <subcountry>
-    <name>Avellino</name>
-    <code>AV</code>
-    <category>province</category>
-    <regional_division>72</regional_division>
-  </subcountry>
-  <subcountry>
-    <name>Bari</name>
-    <code>BA</code>
-    <category>province</category>
-    <regional_division>75</regional_division>
-  </subcountry>
-  <subcountry>
-    <name>Belluno</name>
-    <code>BL</code>
-    <category>province</category>
-    <regional_division>34</regional_division>
-  </subcountry>
-  <subcountry>
-    <name>Benevento</name>
-    <code>BN</code>
-    <category>province</category>
-    <regional_division>72</regional_division>
-  </subcountry>
-  <subcountry>
-    <name>Bergamo</name>
-    <code>BG</code>
-    <category>province</category>
-    <regional_division>25</regional_division>
-  </subcountry>
-  <subcountry>
-    <name>Biella</name>
-    <code>BI</code>
-    <category>province</category>
-    <regional_division>21</regional_division>
-  </subcountry>
-  <subcountry>
-    <name>Bologna</name>
-    <code>BO</code>
-    <category>province</category>
-    <regional_division>45</regional_division>
-  </subcountry>
-  <subcountry>
-    <name>Bolzano</name>
-    <code>BZ</code>
-    <category>province</category>
-    <regional_division>32</regional_division>
-  </subcountry>
-  <subcountry>
-    <name>Brescia</name>
-    <code>BS</code>
-    <category>province</category>
-    <regional_division>25</regional_division>
-  </subcountry>
-  <subcountry>
-    <name>Brindisi</name>
-    <code>BR</code>
-    <category>province</category>
-    <regional_division>75</regional_division>
-  </subcountry>
-  <subcountry>
-    <name>Cagliari</name>
-    <code>CA</code>
-    <category>province</category>
-    <regional_division>88</regional_division>
-  </subcountry>
-  <subcountry>
-    <name>Caltanissetta</name>
-    <code>CL</code>
-    <category>province</category>
-    <regional_division>82</regional_division>
-  </subcountry>
-  <subcountry>
-    <name>Campobasso</name>
-    <code>CB</code>
-    <category>province</category>
-    <regional_division>67</regional_division>
-  </subcountry>
-  <subcountry>
-    <name>Caserta</name>
-    <code>CE</code>
-    <category>province</category>
-    <regional_division>72</regional_division>
-  </subcountry>
-  <subcountry>
-    <name>Catania</name>
-    <code>CT</code>
-    <category>province</category>
-    <regional_division>82</regional_division>
-  </subcountry>
-  <subcountry>
-    <name>Catanzaro</name>
-    <code>CZ</code>
-    <category>province</category>
-    <regional_division>78</regional_division>
-  </subcountry>
-  <subcountry>
-    <name>Chieti</name>
-    <code>CH</code>
-    <category>province</category>
-    <regional_division>65</regional_division>
-  </subcountry>
-  <subcountry>
-    <name>Como</name>
-    <code>CO</code>
-    <category>province</category>
-    <regional_division>25</regional_division>
-  </subcountry>
-  <subcountry>
-    <name>Cosenza</name>
-    <code>CS</code>
-    <category>province</category>
-    <regional_division>78</regional_division>
-  </subcountry>
-  <subcountry>
-    <name>Cremona</name>
-    <code>CR</code>
-    <category>province</category>
-    <regional_division>25</regional_division>
-  </subcountry>
-  <subcountry>
-    <name>Crotone</name>
-    <code>KR</code>
-    <category>province</category>
-    <regional_division>78</regional_division>
-  </subcountry>
-  <subcountry>
-    <name>Cuneo</name>
-    <code>CN</code>
-    <category>province</category>
-    <regional_division>21</regional_division>
-  </subcountry>
-  <subcountry>
-    <name>Enna</name>
-    <code>EN</code>
-    <category>province</category>
-    <regional_division>82</regional_division>
-  </subcountry>
-  <subcountry>
-    <name>Ferrara</name>
-    <code>FE</code>
-    <category>province</category>
-    <regional_division>45</regional_division>
-  </subcountry>
-  <subcountry>
-    <name>Firenze</name>
-    <code>FI</code>
-    <category>province</category>
-    <regional_division>52</regional_division>
-  </subcountry>
-  <subcountry>
-    <name>Foggia</name>
-    <code>FG</code>
-    <category>province</category>
-    <regional_division>75</regional_division>
-  </subcountry>
-  <subcountry>
-    <name>Forlì</name>
-    <code>FO</code>
-    <category>province</category>
-    <regional_division>45</regional_division>
-  </subcountry>
-  <subcountry>
-    <name>Frosinone</name>
-    <code>FR</code>
-    <category>province</category>
-    <regional_division>62</regional_division>
-  </subcountry>
-  <subcountry>
-    <name>Genova</name>
-    <code>GE</code>
-    <category>province</category>
-    <regional_division>42</regional_division>
-  </subcountry>
-  <subcountry>
-    <name>Gorizia</name>
-    <code>GO</code>
-    <category>province</category>
-    <regional_division>36</regional_division>
-  </subcountry>
-  <subcountry>
-    <name>Grosseto</name>
-    <code>GR</code>
-    <category>province</category>
-    <regional_division>52</regional_division>
-  </subcountry>
-  <subcountry>
-    <name>Imperia</name>
-    <code>IM</code>
-    <category>province</category>
-    <regional_division>42</regional_division>
-  </subcountry>
-  <subcountry>
-    <name>Isernia</name>
-    <code>IS</code>
-    <category>province</category>
-    <regional_division>67</regional_division>
-  </subcountry>
-  <subcountry>
-    <name>L'Aquila</name>
-    <code>AQ</code>
-    <category>province</category>
-    <regional_division>65</regional_division>
-  </subcountry>
-  <subcountry>
-    <name>La Spezia</name>
-    <code>SP</code>
-    <category>province</category>
-    <regional_division>42</regional_division>
-  </subcountry>
-  <subcountry>
-    <name>Latina</name>
-    <code>LT</code>
-    <category>province</category>
-    <regional_division>62</regional_division>
-  </subcountry>
-  <subcountry>
-    <name>Lecce</name>
-    <code>LE</code>
-    <category>province</category>
-    <regional_division>75</regional_division>
-  </subcountry>
-  <subcountry>
-    <name>Lecco</name>
-    <code>LC</code>
-    <category>province</category>
-    <regional_division>25</regional_division>
-  </subcountry>
-  <subcountry>
-    <name>Livorno</name>
-    <code>LI</code>
-    <category>province</category>
-    <regional_division>52</regional_division>
-  </subcountry>
-  <subcountry>
-    <name>Lodi</name>
-    <code>LO</code>
-    <category>province</category>
-    <regional_division>25</regional_division>
-  </subcountry>
-  <subcountry>
-    <name>Lucca</name>
-    <code>LU</code>
-    <category>province</category>
-    <regional_division>52</regional_division>
-  </subcountry>
-  <subcountry>
-    <name>Macerata</name>
-    <code>MC</code>
-    <category>province</category>
-    <regional_division>57</regional_division>
-  </subcountry>
-  <subcountry>
-    <name>Mantova</name>
-    <code>MN</code>
-    <category>province</category>
-    <regional_division>25</regional_division>
-  </subcountry>
-  <subcountry>
-    <name>Massa-Carrara</name>
-    <code>MS</code>
-    <category>province</category>
-    <regional_division>52</regional_division>
-  </subcountry>
-  <subcountry>
-    <name>Matera</name>
-    <code>MT</code>
-    <category>province</category>
-    <regional_division>77</regional_division>
-  </subcountry>
-  <subcountry>
-    <name>Messina</name>
-    <code>ME</code>
-    <category>province</category>
-    <regional_division>82</regional_division>
-  </subcountry>
-  <subcountry>
-    <name>Milano</name>
-    <code>MI</code>
-    <category>province</category>
-    <regional_division>25</regional_division>
-  </subcountry>
-  <subcountry>
-    <name>Modena</name>
-    <code>MO</code>
-    <category>province</category>
-    <regional_division>45</regional_division>
-  </subcountry>
-  <subcountry>
-    <name>Napoli</name>
-    <code>NA</code>
-    <category>province</category>
-    <regional_division>72</regional_division>
-  </subcountry>
-  <subcountry>
-    <name>Novara</name>
-    <code>NO</code>
-    <category>province</category>
-    <regional_division>21</regional_division>
-  </subcountry>
-  <subcountry>
-    <name>Nuoro</name>
-    <code>NU</code>
-    <category>province</category>
-    <regional_division>88</regional_division>
-  </subcountry>
-  <subcountry>
-    <name>Oristano</name>
-    <code>OR</code>
-    <category>province</category>
-    <regional_division>88</regional_division>
-  </subcountry>
-  <subcountry>
-    <name>Padova</name>
-    <code>PD</code>
-    <category>province</category>
-    <regional_division>34</regional_division>
-  </subcountry>
-  <subcountry>
-    <name>Palermo</name>
-    <code>PA</code>
-    <category>province</category>
-    <regional_division>82</regional_division>
-  </subcountry>
-  <subcountry>
-    <name>Parma</name>
-    <code>PR</code>
-    <category>province</category>
-    <regional_division>45</regional_division>
-  </subcountry>
-  <subcountry>
-    <name>Pavia</name>
-    <code>PV</code>
-    <category>province</category>
-    <regional_division>25</regional_division>
-  </subcountry>
-  <subcountry>
-    <name>Perugia</name>
-    <code>PG</code>
-    <category>province</category>
-    <regional_division>55</regional_division>
-  </subcountry>
-  <subcountry>
-    <name>Pesaro e Urbino</name>
-    <code>PS</code>
-    <category>province</category>
-    <regional_division>57</regional_division>
-  </subcountry>
-  <subcountry>
-    <name>Pescara</name>
-    <code>PE</code>
-    <category>province</category>
-    <regional_division>65</regional_division>
-  </subcountry>
-  <subcountry>
-    <name>Piacenza</name>
-    <code>PC</code>
-    <category>province</category>
-    <regional_division>45</regional_division>
-  </subcountry>
-  <subcountry>
-    <name>Pisa</name>
-    <code>PI</code>
-    <category>province</category>
-    <regional_division>52</regional_division>
-  </subcountry>
-  <subcountry>
-    <name>Pistoia</name>
-    <code>PT</code>
-    <category>province</category>
-    <regional_division>52</regional_division>
-  </subcountry>
-  <subcountry>
-    <name>Pordenone</name>
-    <code>PN</code>
-    <category>province</category>
-    <regional_division>36</regional_division>
-  </subcountry>
-  <subcountry>
-    <name>Potenza</name>
-    <code>PZ</code>
-    <category>province</category>
-    <regional_division>77</regional_division>
-  </subcountry>
-  <subcountry>
-    <name>Prato</name>
-    <code>PO</code>
-    <category>province</category>
-    <regional_division>52</regional_division>
-  </subcountry>
-  <subcountry>
-    <name>Ragusa</name>
-    <code>RG</code>
-    <category>province</category>
-    <regional_division>82</regional_division>
-  </subcountry>
-  <subcountry>
-    <name>Ravenna</name>
-    <code>RA</code>
-    <category>province</category>
-    <regional_division>45</regional_division>
-  </subcountry>
-  <subcountry>
-    <name>Reggio Calabria</name>
-    <code>RC</code>
-    <category>province</category>
-    <regional_division>78</regional_division>
-  </subcountry>
-  <subcountry>
-    <name>Reggio Emilia</name>
-    <code>RE</code>
-    <category>province</category>
-    <regional_division>45</regional_division>
-  </subcountry>
-  <subcountry>
-    <name>Rieti</name>
-    <code>RI</code>
-    <category>province</category>
-    <regional_division>62</regional_division>
-  </subcountry>
-  <subcountry>
-    <name>Rimini</name>
-    <code>RN</code>
-    <category>province</category>
-    <regional_division>45</regional_division>
-  </subcountry>
-  <subcountry>
-    <name>Roma</name>
-    <code>RM</code>
-    <category>province</category>
-    <regional_division>62</regional_division>
-  </subcountry>
-  <subcountry>
-    <name>Rovigo</name>
-    <code>RO</code>
-    <category>province</category>
-    <regional_division>34</regional_division>
-  </subcountry>
-  <subcountry>
-    <name>Salerno</name>
-    <code>SA</code>
-    <category>province</category>
-    <regional_division>72</regional_division>
-  </subcountry>
-  <subcountry>
-    <name>Sassari</name>
-    <code>SS</code>
-    <category>province</category>
-    <regional_division>88</regional_division>
-  </subcountry>
-  <subcountry>
-    <name>Savona</name>
-    <code>SV</code>
-    <category>province</category>
-    <regional_division>42</regional_division>
-  </subcountry>
-  <subcountry>
-    <name>Siena</name>
-    <code>SI</code>
-    <category>province</category>
-    <regional_division>52</regional_division>
-  </subcountry>
-  <subcountry>
-    <name>Siracusa</name>
-    <code>SR</code>
-    <category>province</category>
-    <regional_division>82</regional_division>
-  </subcountry>
-  <subcountry>
-    <name>Sondrio</name>
-    <code>SO</code>
-    <category>province</category>
-    <regional_division>25</regional_division>
-  </subcountry>
-  <subcountry>
-    <name>Taranto</name>
-    <code>TA</code>
-    <category>province</category>
-    <regional_division>75</regional_division>
-  </subcountry>
-  <subcountry>
-    <name>Teramo</name>
-    <code>TE</code>
-    <category>province</category>
-    <regional_division>65</regional_division>
-  </subcountry>
-  <subcountry>
-    <name>Terni</name>
-    <code>TR</code>
-    <category>province</category>
-    <regional_division>55</regional_division>
-  </subcountry>
-  <subcountry>
-    <name>Torino</name>
-    <code>TO</code>
-    <category>province</category>
-    <regional_division>21</regional_division>
-  </subcountry>
-  <subcountry>
-    <name>Trapani</name>
-    <code>TP</code>
-    <category>province</category>
-    <regional_division>82</regional_division>
-  </subcountry>
-  <subcountry>
-    <name>Trento</name>
-    <code>TN</code>
-    <category>province</category>
-    <regional_division>32</regional_division>
-  </subcountry>
-  <subcountry>
-    <name>Treviso</name>
-    <code>TV</code>
-    <category>province</category>
-    <regional_division>34</regional_division>
-  </subcountry>
-  <subcountry>
-    <name>Trieste</name>
-    <code>TS</code>
-    <category>province</category>
-    <regional_division>36</regional_division>
-  </subcountry>
-  <subcountry>
-    <name>Udine</name>
-    <code>UD</code>
-    <category>province</category>
-    <regional_division>36</regional_division>
-  </subcountry>
-  <subcountry>
-    <name>Varese</name>
-    <code>VA</code>
-    <category>province</category>
-    <regional_division>25</regional_division>
-  </subcountry>
-  <subcountry>
-    <name>Venezia</name>
-    <code>VE</code>
-    <category>province</category>
-    <regional_division>34</regional_division>
-  </subcountry>
-  <subcountry>
-    <name>Verbano-Cusio-Ossola</name>
-    <code>VB</code>
-    <category>province</category>
-    <regional_division>21</regional_division>
-  </subcountry>
-  <subcountry>
-    <name>Vercelli</name>
-    <code>VC</code>
-    <category>province</category>
-    <regional_division>21</regional_division>
-  </subcountry>
-  <subcountry>
-    <name>Verona</name>
-    <code>VR</code>
-    <category>province</category>
-    <regional_division>34</regional_division>
-  </subcountry>
-  <subcountry>
-    <name>Vibo Valentia</name>
-    <code>VV</code>
-    <category>province</category>
-    <regional_division>78</regional_division>
-  </subcountry>
-  <subcountry>
-    <name>Vicenza</name>
-    <code>VI</code>
-    <category>province</category>
-    <regional_division>34</regional_division>
-  </subcountry>
-  <subcountry>
-    <name>Viterbo</name>
-    <code>VT</code>
-    <category>province</category>
-    <regional_division>62</regional_division>
-  </subcountry>
-
-  <subcountry>
     <name>Abruzzi</name>
     <code>65</code>
-    <FIPS>01</FIPS>
-    <category>region</category>
   </subcountry>
   <subcountry>
     <name>Apulia</name>
     <code>75</code>
-    <FIPS>13</FIPS>
-    <category>region</category>
   </subcountry>
   <subcountry>
     <name>Basilicata</name>
     <code>77</code>
-    <FIPS>02</FIPS>
-    <category>region</category>
   </subcountry>
   <subcountry>
     <name>Calabria</name>
     <code>78</code>
-    <FIPS>03</FIPS>
-    <category>region</category>
   </subcountry>
   <subcountry>
     <name>Campania</name>
     <code>72</code>
-    <FIPS>04</FIPS>
-    <category>region</category>
   </subcountry>
   <subcountry>
     <name>Emilia-Romagna</name>
     <code>45</code>
-    <FIPS>05</FIPS>
-    <category>region</category>
   </subcountry>
   <subcountry>
     <name>Friuli-Venezia Giulia</name>
     <code>36</code>
-    <FIPS>06</FIPS>
-    <category>region</category>
   </subcountry>
   <subcountry>
     <name>Lazio</name>
     <code>62</code>
-    <FIPS>07</FIPS>
-    <category>region</category>
   </subcountry>
   <subcountry>
     <name>Liguria</name>
     <code>42</code>
-    <FIPS>08</FIPS>
-    <category>region</category>
   </subcountry>
   <subcountry>
     <name>Lombardy</name>
     <code>25</code>
-    <FIPS>09</FIPS>
-    <category>region</category>
   </subcountry>
   <subcountry>
     <name>Marche</name>
     <code>57</code>
-    <FIPS>10</FIPS>
-    <category>region</category>
   </subcountry>
   <subcountry>
     <name>Molise</name>
     <code>67</code>
-    <FIPS>11</FIPS>
-    <category>region</category>
   </subcountry>
   <subcountry>
     <name>Piedmont</name>
     <code>21</code>
-    <FIPS>12</FIPS>
-    <category>region</category>
   </subcountry>
   <subcountry>
     <name>Sardinia</name>
     <code>88</code>
-    <FIPS>14</FIPS>
-    <category>region</category>
   </subcountry>
   <subcountry>
     <name>Sicily</name>
     <code>82</code>
-    <FIPS>15</FIPS>
-    <category>region</category>
   </subcountry>
   <subcountry>
     <name>Trentino-Alto Adige</name>
     <code>32</code>
-    <FIPS>17</FIPS>
-    <category>region</category>
   </subcountry>
   <subcountry>
     <name>Tuscany</name>
     <code>52</code>
-    <FIPS>16</FIPS>
-    <category>region</category>
   </subcountry>
   <subcountry>
     <name>Umbria</name>
     <code>55</code>
-    <FIPS>18</FIPS>
-    <category>region</category>
   </subcountry>
   <subcountry>
     <name>Valle d'Aosta</name>
     <code>23</code>
-    <FIPS>19</FIPS>
-    <category>region</category>
   </subcountry>
   <subcountry>
     <name>Veneto</name>
     <code>34</code>
-    <FIPS>20</FIPS>
-    <category>region</category>
   </subcountry>
 </country>
+
 
 <country>
   <name>Jamaica</name>
@@ -11010,6 +10353,121 @@ q{
   <name>France</name>
   <code>FR</code>
   <subcountry>
+    <name>Alsace</name>
+    <code>A</code>
+    <category>Region</category>
+  </subcountry>
+  <subcountry>
+    <name>Aquitaine</name>
+    <code>B</code>
+    <category>Region</category>
+  </subcountry>
+  <subcountry>
+    <name>Auvergne</name>
+    <code>C</code>
+    <category>Region</category>
+  </subcountry>
+  <subcountry>
+    <name>Basse-Normandie</name>
+    <code>P</code>
+    <category>Region</category>
+  </subcountry>
+  <subcountry>
+    <name>Bourgogne</name>
+    <code>D</code>
+    <category>Region</category>
+  </subcountry>
+  <subcountry>
+    <name>Bretagne</name>
+    <code>E</code>
+    <category>Region</category>
+  </subcountry>
+  <subcountry>
+    <name>Centre</name>
+    <code>F</code>
+    <category>Region</category>
+  </subcountry>
+  <subcountry>
+    <name>Champagne-Ardenne</name>
+    <code>G</code>
+    <category>Region</category>
+  </subcountry>
+  <subcountry>
+    <name>Corse</name>
+    <code>H</code>
+    <category>Region</category>
+  </subcountry>
+  <subcountry>
+    <name>Franche-Comté</name>
+    <code>I</code>
+    <category>Region</category>
+  </subcountry>
+  <subcountry>
+    <name>Haute-Normandie</name>
+    <code>Q</code>
+    <category>Region</category>
+  </subcountry>
+  <subcountry>
+    <name>Île-de-France</name>
+    <code>J</code>
+    <category>Region</category>
+  </subcountry>
+  <subcountry>
+    <name>Languedoc-Roussillon</name>
+    <code>K</code>
+    <category>Region</category>
+  </subcountry>
+  <subcountry>
+    <name>Limousin</name>
+    <code>L</code>
+    <category>Region</category>
+  </subcountry>
+  <subcountry>
+    <name>Lorraine</name>
+    <code>M</code>
+    <category>Region</category>
+  </subcountry>
+  <subcountry>
+    <name>Midi-Pyrénées</name>
+    <code>N</code>
+    <category>Region</category>
+  </subcountry>
+  <subcountry>
+    <name>Nord-Pas-de-Calais</name>
+    <code>O</code>
+    <category>Region</category>
+  </subcountry>
+  <subcountry>
+    <name>Pays de la Loire</name>
+    <code>R</code>
+    <category>Region</category>
+  </subcountry>
+  <subcountry>
+    <name>Picardie</name>
+    <code>S</code>
+    <category>Region</category>
+  </subcountry>
+  <subcountry>
+    <name>Poitou-Charentes</name>
+    <code>T</code>
+    <category>Region</category>
+  </subcountry>
+  <subcountry>
+    <name>Provence-Alpes-Côte d'Azur</name>
+    <code>U</code>
+    <category>Region</category>
+  </subcountry>
+  <subcountry>
+    <name>Rhône-Alpes</name>
+    <code>V</code>
+    <category>Region</category>
+  </subcountry> 
+</country>
+
+<country>
+  <name>France</name>
+  <code>FR</code>
+  <subcountry>
     <name>Ain</name>
     <code>01</code>
     <regional_division>V</regional_division>
@@ -14071,7 +13529,7 @@ q{
   <name>Mexico</name>
   <code>MX</code>
   <subcountry>
-    <name>Distrito Federal</name>
+    <name>Ciudad de MéxicoDistrito Federal</name>
     <code>DIF</code>
     <category>federal district</category>
     <FIPS>09</FIPS>

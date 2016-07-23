@@ -48,7 +48,7 @@ Locale::SubCountry - Convert state, province, county etc. names to/from ISO 3166
         }
     }
 
-    # Methods for country codes and names
+    # Methods for fetching all country codes and names in the world
 
     my $world = Locale::SubCountry::World->new();
     my @all_countries     = $world->all_full_names;
@@ -62,8 +62,7 @@ Locale::SubCountry - Convert state, province, county etc. names to/from ISO 3166
 
 This module allows you to convert the full name for a countries administrative
 region to the code commonly used for postal addressing. The reverse lookup
-can also be done. Sub country codes are defined in "ISO 3166-2:2007,
-Codes for the representation of names of countries and their subdivisions".
+can also be done.
 
 Sub countries are termed as states in the US and Australia, provinces
 in Canada and counties in the UK and Ireland. Other terms include region,
@@ -73,10 +72,14 @@ Names and ISO 3166-2 codes for all sub countries in a country can be
 returned as either a hash or an array.
 
 Names and ISO 3166-1 codes for all countries in the world can be
-returned as either a hash or an array.
+returned as either a hash or an array. This in turn can be used to
+fetch every sub country from every country (see examples/demo.pl).
+
+Sub country codes are defined in "ISO 3166-2,
+Codes for the representation of names of countries and their subdivisions".
 
 ISO 3166-2 codes can be converted to FIPS 10-4 codes. The reverse lookup can
-also be done.
+also be done. Note that FIPS 10-4 has been deprecated.
 
 =head1 METHODS
 
@@ -233,38 +236,24 @@ Given a sub country object, returns an array of all sub country ISO 3166-2 codes
 sorted alphabetically. If the country has no sub countries, returns undef.
 
 
-
 =head1 SEE ALSO
 
 L<Locale::Country>,L<Lingua::EN::AddressParse>,
 L<Geo::StreetAddress::US>,L<Geo::PostalAddress>,L<Geo::IP>
 L<WWW::Scraper::Wikipedia::ISO3166> for obtaining ISO 3166-2 data
 
-ISO 3166-1:2007 Codes for the representation of names of countries and their
+ISO 3166-1 Codes for the representation of names of countries and their
 subdivisions - Part 1: Country codes
 
-ISO 3166-2:2007 Codes for the representation of names of countries and their
+ISO 3166-2 Codes for the representation of names of countries and their
 subdivisions - Part 2: Country subdivision code
-Also released as AS/NZS 2632.2:1999
 
-Federal Information Processing Standards Publication 10-4
-1995 April Specifications for  COUNTRIES, DEPENDENCIES, AREAS OF SPECIAL SOVEREIGNTY,
-AND THEIR PRINCIPAL ADMINISTRATIVE DIVISIONS
 
 L<http://www.statoids.com/statoids.html> is a good source for sub country codes plus
 other statistical data.
 
 
-
-
 =head1 LIMITATIONS
-
-ISO 3166-2:2007 defines all sub country codes as being up to 3 letters and/or
-numbers. These codes are commonly accepted for countries like the USA
-and Canada. In Australia  this method of abbreviation is not widely accepted.
-For example, the ISO code for 'New South Wales' is 'NS', but 'NSW' is the
-abbreviation that is most commonly used. I could add a flag to enforce
-ISO-3166-2 codes if needed.
 
 The ISO 3166-2 standard romanizes the names of provinces and regions in non-latin
 script areas, such as Russia and South Korea. One Romanisation is given for each
@@ -335,7 +324,7 @@ use Locale::SubCountry::Data;
 #-------------------------------------------------------------------------------
 
 package Locale::SubCountry::World;
-our $VERSION = '1.65';
+our $VERSION = '1.66';
 
 # Define all the methods for the 'world' class here. Note that because the
 # name space inherits from the Locale::SubCountry name space, the
@@ -391,7 +380,7 @@ sub all_codes
 #-------------------------------------------------------------------------------
 
 package Locale::SubCountry;
-our $VERSION = '1.65';
+our $VERSION = '1.66';
 
 #-------------------------------------------------------------------------------
 # Initialization code must be run first to create global data structure.

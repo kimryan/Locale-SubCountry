@@ -1,7 +1,14 @@
 Revision history for Perl CPAN module Locale::SubCountry
 
+1.66 23 Jul 2016
+    Github integration
+    Improved documentation
+    Updated France,  all regions reorganised in January 2016
+    Updated Italy,  all regions reorganised in January 2015
+    Distrito Federal renamed to Ciudad de México, in Mexico
+
+
 1.65 25 Apr 2016
-    
     Fixed #110905, wrong code for Sulawesi Barat
 
 
@@ -18,7 +25,7 @@ Revision history for Perl CPAN module Locale::SubCountry
 1.62 23 Jul 2013
     Removed POD utf encoding directive from SubCountry.pm again and removed utf8
     characters from the POD section. They are still causing errors on selected
-    platfroms and versions of Perl. Replaced with ASCII text. Fix for RT bug 71228
+    platforms and versions of Perl. Replaced with ASCII text. Fix for RT bug 71228
 
 1.61 15 Feb 2013
     Small correction for German data
