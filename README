@@ -1,54 +1,44 @@
 NAME
 
-Locale::SubCountry - convert state, county, province etc, names to/from ISO 3166-2 code 
-
+Locale::SubCountry - Convert state, province, county etc. names to/from ISO 3166-2 codes, get all states in a country
+    
 SYNOPSIS
 
-    my $country_code = 'GB';
-    my $UK =  ocale::SubCountry->new($country_code);
-    if ( not $UK )
+    use Locale::SubCountry;
+    
+    my $fr = Locale::SubCountry->new('France');
+    if ( not $fr )
     {
-        die "Invalid code $country_code\n";
-    }
-    elsif (  $UK->has_sub_countries )
-    {
-        print($UK->full_name('DGY'),"\n");           # Dumfries and Galloway
-        print($UK->regional_division('DGY'),"\n");   # SCT (Scotland)
-    }
-
-    my $australia = Locale::SubCountry->new('Australia');
-    if ( not $australia )
-    {
-        die "Invalid code: Australia\n";
+        die "Invalid country or code: France\n";
     }
     else
     {
-        print($australia->country,"\n");        # Australia
-        print($australia->country_code,"\n");   # AU
+        print($fr->country,"\n");        # France
+        print($fr->country_code,"\n");   # FR
 
-        if (  $australia->has_sub_countries )
+        if (  $fr->has_sub_countries )
         {
-            print($australia->code('New South Wales '),"\n");     # NSW
-            print($australia->full_name('S.A.'),"\n");            # South Australia
+            print($fr->code('Hautes-Alpes '),"\n");       # 05
+            print($fr->full_name('03'),"\n");             # Allier
             my $upper_case = 1;
-            print($australia->full_name('Qld',$upper_case),"\n"); # QUEENSLAND
-            print($australia->category('NSW'),"\n");              # state
-            print($australia->FIPS10_4_code('ACT'),"\n");         # 01
-            print($australia->ISO3166_2_code('02'),"\n");         # NSW
+            print($fr->full_name('02',$upper_case),"\n"); # AINSE
+            print($fr->level('02'),"\n");                 # Metropolitan department
+            print($fr->level('A'),"\n");                  # Metropolitan region
+            print($fr->level('BL'),"\n");                 # Overseas territorial collectivity
+ 
+            my @fr_names  = $fr->all_full_names;    # Ain, Ainse, Allier...
+            my @fr_codes   = $fr->all_codes;        # 01, 02, 03 ...
+            my %fr_names_keyed_by_code  = $fr->code_full_name_hash;  # 01 => Ain...
+            my %fr_codes_keyed_by_name  = $fr->full_name_code_hash;  # Ain => 01 ...
 
-            my @aus_state_names  = $australia->all_full_names;
-            my @aus_code_names   = $australia->all_codes;
-            my %aus_states_keyed_by_code  = $australia->code_full_name_hash;
-            my %aus_states_keyed_by_name  = $australia->full_name_code_hash;
-
-            foreach my $code ( sort keys %aus_states_keyed_by_code )
+            foreach my $code ( sort keys %fr_names_keyed_by_code )
             {
-               printf("%-3s : %s\n",$code,$aus_states_keyed_by_code{$code});
+               printf("%-3s : %s\n",$code,$fr_names_keyed_by_code{$code});            
             }
         }
     }
 
-    # Methods for country codes and names
+    # Methods for fetching all country codes and names in the world
 
     my $world = Locale::SubCountry::World->new();
     my @all_countries     = $world->all_full_names;
@@ -58,31 +48,19 @@ SYNOPSIS
     my %all_country_keyed_by_code   = $world->code_full_name_hash;
 
 
-
-HOW TO INSTALL
-
-    perl Makefile.PL
-    make
-    make test
-    make install
-    
-    or
-    
-    perl Build.PL
-   ./Build
-   ./Build test
-   ./Build install    
-
-
 DESCRIPTION
 
-This module allows you to convert the full name for a countries administrative
-region to the code commonly used for postal addressing. The reverse lookup
+This module allows you to convert the full name for a country's administrative
+region to the code commonly used for postal addressing. The reverse look up
 can also be done.
+
+Lists of sub country codes are useful for web applications that require a valid
+state, county etc to be entered as part of a users location.
 
 Sub countries are termed as states in the US and Australia, provinces
 in Canada and counties in the UK and Ireland. Other terms include region,
-department, city and territory.
+department, city and territory. Countries such as France have several
+levels of sub countries, such as Metropolitan department, Metropolitan region etc.
 
 Names and ISO 3166-2 codes for all sub countries in a country can be
 returned as either a hash or an array.
@@ -93,31 +71,3 @@ fetch every sub country from every country (see examples/demo.pl).
 
 Sub country codes are defined in "ISO 3166-2,
 Codes for the representation of names of countries and their subdivisions".
-
-ISO 3166-2 codes can be converted to FIPS 10-4 codes. The reverse lookup can
-also be done. Note that FIPS 10-4 has been deprecated.
-
-
-AUTHOR
-
-Locale::SubCountry was written by Kim Ryan, kimryan at cpan dot org
-
-
-CREDITS
-
-Alastair McKinstry provided many of the sub country codes and names.
-
-Terrence Brannon produced Locale::US, which was the starting point for
-this module.
-
-Mark Summerfield and Guy Fraser provided the list of UK counties.
-
-TJ Mather supplied the FIPS codes and many amendments to the sub country data
-
-
-COPYRIGHT AND LICENCE
-
-Copyright (C) 2015 by Kim Ryan. All rights reserved.
-
-This library is free software; you can redistribute it and/or modify
-it under the same terms as Perl itself.

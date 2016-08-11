@@ -1,5 +1,14 @@
 Revision history for Perl CPAN module Locale::SubCountry
 
+2.00 11 Aug 2016
+    Sourced ISO codes from alioth.debian.org in JSON format,
+    Many French Metropolitan departments and Italian provinces added
+    Renamed SubCountry/Data.pm to Codes.pm
+    'category' method renamed to 'level', as it reflects a sub country's size
+    removed  FIPS10_4_code and ISO3166_2_code methods as FIPS is deprecated
+    removed regional_division method, info no longer available from new source data
+    Improved documentation
+
 1.66 23 Jul 2016
     Github integration
     Improved documentation
