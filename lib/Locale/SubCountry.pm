@@ -15,6 +15,7 @@ Locale::SubCountry - Convert state, province, county etc. names to/from ISO 3166
     {
         print($fr->country,"\n");        # France
         print($fr->country_code,"\n");   # FR
+        print($fr->country_number,"\n"); # 250
 
         if (  $fr->has_sub_countries )
         {
@@ -25,6 +26,7 @@ Locale::SubCountry - Convert state, province, county etc. names to/from ISO 3166
             print($fr->level('02'),"\n");                 # Metropolitan department
             print($fr->level('A'),"\n");                  # Metropolitan region
             print($fr->level('BL'),"\n");                 # Overseas territorial collectivity
+            print($fr->levels,"\n");                      # Metropolitan region => 22, Metropolitan department => 96 ...
  
             my @fr_names  = $fr->all_full_names;    # Ain, Ainse, Allier...
             my @fr_codes   = $fr->all_codes;        # 01, 02, 03 ...
@@ -149,7 +151,7 @@ such as 'United Kingdom'
 
 =head2 country_code
 
-Given a sub country object, returns the alpha-2  ISO 3166-1 code of the country,
+Given a sub country object, returns the alpha-2 ISO 3166-1 code of the country,
 such as 'GB'
 
 
@@ -295,7 +297,7 @@ use Locale::SubCountry::Codes;
 #-------------------------------------------------------------------------------
 
 package Locale::SubCountry::World;
-our $VERSION = '2.00';
+our $VERSION = '2.01';
 
 # Define all the methods for the 'world' class here. Note that because the
 # name space inherits from the Locale::SubCountry name space, the
@@ -351,7 +353,7 @@ sub all_codes
 #-------------------------------------------------------------------------------
 
 package Locale::SubCountry;
-our $VERSION = '2.00';
+our $VERSION = '2.01';
 
 #-------------------------------------------------------------------------------
 # Initialization code which will be run first to create global data structure.
@@ -383,9 +385,12 @@ our $VERSION = '2.00';
 
         $Locale::SubCountry::country{_code_keyed}{$country_ref->{alpha_2}} = $country_ref->{name};
         $Locale::SubCountry::country{_full_name_keyed}{$country_ref->{name}} = $country_ref->{alpha_2};
+        
+        # Get numeric code for country, such as Australia = '036'
+        $Locale::SubCountry::country{$country_ref->{name}}{_numeric }= $country_ref->{numeric};
     }
 
-    
+     
     foreach my $sub_country_ref ( @{ $all_codes_ref->{'3166-2'} })
     {    
         my ($country_code,$sub_country_code) = split(/\-/,$sub_country_ref->{code});
@@ -394,6 +399,10 @@ our $VERSION = '2.00';
         $Locale::SubCountry::subcountry{$country_code}{_code_keyed}{$sub_country_code} = $sub_country_name;
         $Locale::SubCountry::subcountry{$country_code}{_full_name_keyed}{$sub_country_name} = $sub_country_code;        
         $Locale::SubCountry::subcountry{$country_code}{$sub_country_code}{_level} = $sub_country_ref->{type};
+        
+        # Record  level occurence in a country
+        $Locale::SubCountry::subcountry{$country_code}{_levels}{$sub_country_ref->{type}}++; 
+       
     }
 }
 
@@ -442,13 +451,14 @@ sub new
     bless($sub_country,$class);
     $sub_country->{_country} = $country;
     $sub_country->{_country_code} = $country_code;
+    $sub_country->{_numeric} = $Locale::SubCountry::country{$country}{_numeric};
 
 
     return($sub_country);
 }
 
 #-------------------------------------------------------------------------------
-# Returns the current country of the sub country object
+# Returns the current country's name of the sub country object
 
 sub country
 {
@@ -456,12 +466,21 @@ sub country
     return( $sub_country->{_country} );
 }
 #-------------------------------------------------------------------------------
-# Returns the current country code of the sub country object
+# Returns the current country's alpha2 code of the sub country object
 
 sub country_code
 {
     my $sub_country = shift;
     return( $sub_country->{_country_code} );
+}
+
+#-------------------------------------------------------------------------------
+# Returns the current country's numeric code of the sub country object
+
+sub country_number
+{
+    my $sub_country = shift;
+    return( $sub_country->{_numeric} );
 }
 
 #-------------------------------------------------------------------------------
@@ -516,31 +535,6 @@ sub code
     }
 }
 
-
-#-------------------------------------------------------------------------------
-# Given the alpha-2 ISO 3166-2 code for a sub country, return the level,
-# being one of state, province, overseas territory, city, council etc
-
-sub level
-{
-    my $sub_country = shift;
-    my ($code) = @_;
-
-    $code = _clean($code);
-
-    my $level = $Locale::SubCountry::subcountry{$sub_country->{_country_code}}{$code}{_level};
-
-    if ( $level )
-    {
-        return($level);
-    }
-    else
-    {
-        return('unknown');
-    }
-}
-
-
 #-------------------------------------------------------------------------------
 # Given the alpha-2 ISO 3166-2 code for a sub country, return the full name.
 # Parameters are the code and a flag, which if set to true
@@ -576,6 +570,40 @@ sub full_name
         return('unknown');
     }
 }
+
+#-------------------------------------------------------------------------------
+# Given the alpha-2 ISO 3166-2 code for a sub country, return the level,
+# being one of state, province, overseas territory, city, council etc
+sub level
+{
+    my $sub_country = shift;
+    my ($code) = @_;
+
+    $code = _clean($code);
+
+    my $level = $Locale::SubCountry::subcountry{$sub_country->{_country_code}}{$code}{_level};
+
+    if ( $level )
+    {
+        return($level);
+    }
+    else
+    {
+        return('unknown');
+    }
+}
+#-------------------------------------------------------------------------------
+# Given a sub country object, return a hash of all the levels and their totals 
+# Such as Australia: State => 6, Territory => 2
+
+sub levels
+{
+    my $sub_country = shift;  
+ 
+    return( %{ $Locale::SubCountry::subcountry{$sub_country->{_country_code}}{_levels} });
+
+}
+
 #-------------------------------------------------------------------------------
 # Returns 1 if the current country has sub countries. otherwise 0.
 

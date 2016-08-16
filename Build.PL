@@ -21,6 +21,7 @@ Module::Build -> new
 	strict              => 0,
 	utf8                => 0,
 	warnings            => 0,
+    JSON                => 1.00    
  },
 meta_merge =>
 {

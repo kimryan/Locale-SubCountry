@@ -15,11 +15,13 @@ WriteMakefile
 	strict              => 1.04,
 	utf8                => 1.09,
 	warnings            => 1.12,
+    JSON                => 1.00
 	},
     
     TEST_REQUIRES =>
     {
     Test::More          => 0.94,
+    Test::Pod  => 1.04,
     },
     
    'LICENSE'     => 'perl',

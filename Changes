@@ -1,5 +1,11 @@
 Revision history for Perl CPAN module Locale::SubCountry
 
+2.01 15 Aug 2016
+
+    Added country's numeric code, accessed from the country_number method
+    Added 'levels' method, return all level types and their totals in a sub country
+    Added JSON to dependancy, fix for RT bug #116926, 
+    
 2.00 11 Aug 2016
     Sourced ISO codes from alioth.debian.org in JSON format,
     Many French Metropolitan departments and Italian provinces added
