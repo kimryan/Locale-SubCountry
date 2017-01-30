@@ -286,12 +286,13 @@ it under the same terms as Perl itself.
 =cut
 
 #-------------------------------------------------------------------------------
+package Locale::SubCountry;
 
 use strict;
 use warnings;
 use locale;
 use Exporter;
-use JSON;
+use JSON();
 use Locale::SubCountry::Codes;
 
 #-------------------------------------------------------------------------------
