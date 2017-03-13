@@ -1,10 +1,14 @@
 Revision history for Perl CPAN module Locale::SubCountry
 
+2.02 7 Mar 2017
+    Fixed RT bug #120002, name space pollution
+    Updated to alioth.debian.org codes 3.74 (Jan 2017)
+    
 2.01 15 Aug 2016
 
     Added country's numeric code, accessed from the country_number method
     Added 'levels' method, return all level types and their totals in a sub country
-    Added JSON to dependancy, fix for RT bug #116926, 
+    Added JSON to dependency, fix for RT bug #116926, 
     
 2.00 11 Aug 2016
     Sourced ISO codes from alioth.debian.org in JSON format,
@@ -18,14 +22,12 @@ Revision history for Perl CPAN module Locale::SubCountry
 1.66 23 Jul 2016
     Github integration
     Improved documentation
-    Updated France,  all regions reorganised in January 2016
-    Updated Italy,  all regions reorganised in January 2015
+    Updated France, all regions reorganised in January 2016
+    Updated Italy, all regions reorganised in January 2015
     Distrito Federal renamed to Ciudad de México, in Mexico
-
 
 1.65 25 Apr 2016
     Fixed #110905, wrong code for Sulawesi Barat
-
 
 1.64 7 Apr 2015
     Suppressed warnings on printing wide characters in demo.pl
@@ -35,7 +37,6 @@ Revision history for Perl CPAN module Locale::SubCountry
 1.63 9 Apr 2014
     Check that a country has sub countries before searching for code and full name, fix for RT bug 89706
     Remove minuimum versions for utf8 and strict modules, fix for RT bug 92587
-
 
 1.62 23 Jul 2013
     Removed POD utf encoding directive from SubCountry.pm again and removed utf8

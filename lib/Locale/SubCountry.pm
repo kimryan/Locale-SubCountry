@@ -278,7 +278,7 @@ this module.
 
 =head1 COPYRIGHT AND LICENSE
 
-Copyright (c) 2016 Kim Ryan. All rights reserved.
+Copyright (c) 2017 Kim Ryan. All rights reserved.
 
 This library is free software; you can redistribute it and/or modify
 it under the same terms as Perl itself.
@@ -287,6 +287,7 @@ it under the same terms as Perl itself.
 
 #-------------------------------------------------------------------------------
 
+package Locale::SubCountry::World;
 use strict;
 use warnings;
 use locale;
@@ -296,8 +297,8 @@ use Locale::SubCountry::Codes;
 
 #-------------------------------------------------------------------------------
 
-package Locale::SubCountry::World;
-our $VERSION = '2.01';
+
+our $VERSION = '2.02';
 
 # Define all the methods for the 'world' class here. Note that because the
 # name space inherits from the Locale::SubCountry name space, the
@@ -353,7 +354,7 @@ sub all_codes
 #-------------------------------------------------------------------------------
 
 package Locale::SubCountry;
-our $VERSION = '2.01';
+our $VERSION = '2.02';
 
 #-------------------------------------------------------------------------------
 # Initialization code which will be run first to create global data structure.
